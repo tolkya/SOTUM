@@ -1,0 +1,192 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #2d2d30;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+  
+h1 {
+  margin-bottom: 30px;
+}
+
+#game {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+/* Cases par défaut */
+.cell {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #085cb6; /* Fond bleu */
+  color: white;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Lettre bien placée */
+.cell.correct {
+  background-color: #d61a1a; /* Vert */
+  color: white;
+}
+
+/* Lettre absente */
+.cell.absent {
+  background-color: #6c757d; /* Gris foncé */
+  color: white;
+}
+
+/* Lettre présente mais mal placée — cercle orange */
+.cell.present {
+  background-color: #007BFF; /* garder le bleu de fond */
+  color: transparent; /* cacher la lettre par défaut */
+  position: relative;
+}
+
+.cell.present::before {
+  content: attr(data-letter); /* Affiche la lettre dans le rond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#keyboard button {
+  margin: 3px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+}
+
+#keyboard {
+  margin-top: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#category {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+#replay-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#replay-btn:hover {
+  background-color: #0056b3;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* fond sombre */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#overlay button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #f39c12;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#overlay button:hover {
+  background-color: #e67e22;
+}
+
+#overlay-message {
+  animation: pop 0.6s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+  margin: 20px auto;
+  gap: 5px;
+}
+
+.key {
+  padding: 10px 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.key:hover {
+  background-color: #ccc;
+}
