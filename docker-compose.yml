@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lamp-php-container
+    container_name: sotum-php-container
     ports:
       - "8080:80"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: lamp-mysql-container
+    container_name: sotum-mysql-container
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -31,7 +31,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: lamp-phpmyadmin-container
+    container_name: sotum-phpmyadmin-container
     restart: always
     ports:
       - "8081:80"
