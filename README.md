@@ -39,7 +39,7 @@ docker-compose up -d
 
 
 🌍 Accès
-Application web : http://localhost:8080/sotum/public/index.html
+Application web : http://localhost:8080/sutom/public/index.html
 
 phpMyAdmin : http://localhost:8081
 
