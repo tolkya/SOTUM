@@ -1,7 +1,7 @@
-#  Projet SOTUM - Environnement LAMP avec Docker
+#  Projet SUTOM - Environnement LAMP avec Docker
 
-Bienvenue dans ce projet du jeux SOTUM avec un environnement **LAMP (Linux, Apache, MySQL, PHP)** prêt à l'emploi grâce à Docker.  
-Il permet aux visiteurs de jouer au SOTUM.
+Bienvenue dans ce projet du jeux SUTOM avec un environnement **LAMP (Linux, Apache, MySQL, PHP)** prêt à l'emploi grâce à Docker.  
+Il permet aux visiteurs de jouer au SUTOM.
 
 ---
 
@@ -27,7 +27,7 @@ Ce projet a pour but de :
 
 bash'''
 
-git clone https://github.com/tolkya/SOTUM.git .
+git clone https://github.com/tolkya/SUTOM.git .
 
 docker-compose up -d
 
