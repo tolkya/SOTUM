@@ -22,7 +22,7 @@ async function initGame() { //async car appelle une API externe
     currentRow = 0; // Ligne courante = 0 (début)
     currentGuess = ""; // Aucune lettre tapée au début
 
-    console.log("Mot choisi :", WORD); // Affiche le mot (debug)
+    //console.log("Mot choisi :", WORD); // Affiche le mot (debug)
 
    
     const oldCategory = document.getElementById("category"); 
